@@ -1,23 +1,23 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import ScrapedData
 import requests
 from bs4 import BeautifulSoup
-from .models import ScrapedData
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
 
 def scrape_and_save(request):
-    url = 'https://www.rakuten-sec.co.jp/ITS/V_ACT_Login.html'  # スクレイピング対象のURLを指定
+    url = 'https://example.com'  # スクレイピング対象のURLを設定
     response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
 
-    # ページから必要な情報を抽出
-    data = soup.find('div', class_='target-element').text
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, 'html.parser')
+        # スクレイピングしたデータを取得
+        title = soup.find('title').text
+        content = soup.find('p').text
 
-    # データベースに保存
-    scraped_data = ScrapedData(content=data)
-    scraped_data.save()
+        # データベースに保存
+        scraped_data = ScrapedData(title=title, content=content)
+        scraped_data.save()
 
-    return HttpResponse(f'Successfully scraped and saved: {data}')
+        return render(request, 'scraping_app/display_data.html', {'scraped_data': scraped_data})
+
+    else:
+        return render(request, 'scraping_app/error.html')
