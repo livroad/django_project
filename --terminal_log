@@ -169,3 +169,64 @@ urlpatterns = [
 (venv) git add .
 
 ]633;E;git add .;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) git add -a
+
+]633;E;git add -a;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) git add -A
+
+]633;E;git add -A;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) git commit -m "display on branser"
+
+]633;E;git commit -m "display on branser";bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) git status
+
+]633;E;git status;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) git add .
+
+]633;E;git add .;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) git status
+
+]633;E;git status;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) git dd .\--terminal_log
+
+]633;E;git dd .\x5c--terminal_log;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) git add .\--terminal_log
+
+]633;E;git add .\x5c--terminal_log;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) git status
+
+]633;E;git status;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) ls
+
+
+    ディレクトリ: C:\Users\takak\Desktop\python-app\django
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2023/09/30     23:23                .vscode
+d-----        2023/10/02     22:59                myapp
+d-----        2023/09/30     23:23                project_20230923
+d-----        2023/09/30     23:23                venv
+-a----        2023/10/03      0:05          12533 --terminal_log
+-a----        2023/10/02     23:49         143360 db.sqlite3
+-a----        2023/09/28     21:27            692 manage.py
+-a----        2023/09/28     21:27             16 README.md
+-a----        2023/09/30     23:23           1000 requirement.txt
+
+
+]633;E;ls;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) git branch
+
+]633;E;git branch;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) git push origin second
+
+]633;E;git push origin second;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) git checkout main
+
+]633;E;git checkout main;bd21e03f-9c11-487b-9e9c-d82018c98f77]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5ctakak\x5cDesktop\x5cpython-app\x5cdjangoPS C:\Users\takak\Desktop\python-app\django> ]633;B
+(venv) Stop-Transcript
+**********************
+Windows PowerShell トランスクリプト終了
+終了時刻: 20231003000730
+**********************
