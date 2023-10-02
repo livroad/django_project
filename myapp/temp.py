@@ -3,31 +3,39 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from bs4 import BeautifulSoup
 import requests
 import time
 import json
 
-url = 'https://app.rakuten.co.jp//services/api/Travel/SimpleHotelSearch/20170426'
-# url = 'https://app.rakuten.co.jp/services/api/Travel/SimpleHotelSearch/20170426?format=json&largeClassCode=japan&middleClassCode=aichi&smallClassCode=nagoyashi&detailClassCode=A&applicationId=1082202931688861826'
+url = 'https://app.rakuten.co.jp//services/api/Recipe/CategoryRanking/20170426'
+# url = 'https://app.rakuten.co.jp//services/api/Travel/SimpleHotelSearch/20170426'
+
 headers = {
     'content-type':'application/json',
 }
 
 params = {
     'format':'json',
-    'largeClassCode':'japan',
-    'middleClassCode':'aichi',
-    'smallClassCode':'nagoyashi',
-    'detailClassCode':'A',
+    'categoryId':'38',
     'applicationId':'1082202931688861826',
 }
 
 response = requests.get(url, headers = headers, params=params)
+
 data = json.loads(response.text)
-first_hotel_info = data["hotels"][0]['hotel'][0]['hotelBasicInfo']
-hotel_name = first_hotel_info['hotelName']
+nickname = data["result"][0]["nickname"]
+recipeTitle = data["result"][0]["recipeTitle"]
+recipeDescription = data["result"][0]["recipeDescription"]
+recipeMaterial = data["result"][0]["recipeMaterial"]
+# first_hotel_info = data["hotels"][0]['hotel'][0]['hotelBasicInfo']
+# hotel_name = first_hotel_info['hotelName']
 # response = requests.get('https://www.google.co.jp/search')
-print(hotel_name)
+print(nickname)
+print(recipeTitle)
+print(recipeDescription)
+print(recipeMaterial)
+
 # print(response)
 
 # options = webdriver.ChromeOptions()

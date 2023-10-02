@@ -1,23 +1,45 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from .models import ScrapedData
 import requests
 from bs4 import BeautifulSoup
+import json
+
+def index(request):
+    return HttpResponse("hello")
 
 def scrape_and_save(request):
-    url = 'https://example.com'  # スクレイピング対象のURLを設定
-    response = requests.get(url)
+    url = 'https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426'
+    headers = {
+        'content-type': 'application/json',
+    }
+    params = {
+        'format': 'json',
+        'categoryId': '38',
+        'applicationId': '1082202931688861826',
+    }
+
+    response = requests.get(url, headers=headers, params=params)
 
     if response.status_code == 200:
-        soup = BeautifulSoup(response.text, 'html.parser')
-        # スクレイピングしたデータを取得
-        title = soup.find('title').text
-        content = soup.find('p').text
-
-        # データベースに保存
-        scraped_data = ScrapedData(title=title, content=content)
+        data = json.loads(response.text)
+        test = {
+            'nickname':data["result"][0]["nickname"],
+            'recipeTitle':data["result"][0]["recipeTitle"],
+            'recipeDescription':data["result"][0]["recipeDescription"],
+            'recipeMaterial':data["result"][0]["recipeMaterial"],
+        }
+        nickname = data["result"][0]["nickname"]
+        recipeTitle = data["result"][0]["recipeTitle"]
+        recipeDescription = data["result"][0]["recipeDescription"]
+        recipeMaterial = data["result"][0]["recipeMaterial"]
+        scraped_data = ScrapedData(
+            title=recipeTitle,
+            content=f"Nickname: {nickname}\nDescription: {recipeDescription}\nMaterial: {recipeMaterial}"
+        )
         scraped_data.save()
 
-        return render(request, 'scraping_app/display_data.html', {'scraped_data': scraped_data})
+        return render(request, 'myapp/display_data.html', {'scraped_data': scraped_data, 'test': test})
 
     else:
-        return render(request, 'scraping_app/error.html')
+        return render(request, 'myapp/error.html')
